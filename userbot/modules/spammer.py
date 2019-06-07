@@ -43,6 +43,8 @@ async def spammer(e):
         for i in range(1, counter):
             await e.respond(spam_message)
             time.sleep(0.7)
+            if pattern == "^.spam":
+                break
         await e.delete()
         if LOGGER:
             await e.client.send_message(
