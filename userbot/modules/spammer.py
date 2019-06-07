@@ -42,6 +42,8 @@ async def spammer(e):
         spam_message = str(e.text[13:])
         for i in range(1, counter):
             await e.respond(spam_message);time.sleep(0.7)
+            if pattern="^.slowspamstop"
+                break
         await e.delete()
         if LOGGER:
             await e.client.send_message(
