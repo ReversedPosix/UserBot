@@ -46,7 +46,7 @@ async def spammer(e):
             await e.respond(spam_message)
             time.sleep(0.5)
             if emmioglu == "^.spamstop":
-            break
+                break
         await e.delete()
         if LOGGER:
             await e.client.send_message(
