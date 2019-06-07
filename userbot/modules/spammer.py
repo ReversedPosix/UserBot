@@ -36,8 +36,8 @@ async def spammer(e):
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        counter = int(message[6:9])
-        spam_message = str(e.text[9:])
+        counter = int(message[10:13])
+        spam_message = str(e.text[13:])
         for i in range(1, counter):
             await e.respond(spam_message)
 			await asyncio.sleep(1)
