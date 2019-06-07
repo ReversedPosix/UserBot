@@ -43,9 +43,7 @@ async def spammer(e):
         from userbot.events import register
         for i in range(1, counter):
             await e.respond(spam_message)
-            time.sleep(0.7)
-            if emmioglu == "^.spamstop":
-                break
+            time.sleep(0.5)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
