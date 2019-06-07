@@ -35,24 +35,23 @@ async def spammer(e):
                 "Spam was executed successfully"
                 )
 
-@register(outgoing=True, pattern="^.slowspam")
+@register(outgoing=True, pattern="^.delayspam")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        counter = int(message[10:13])
-        spam_message = str(e.text[13:])
+        spamDelay = float(message[11:15])
+        counter = int(message[15:19])
+        spam_message = str(e.text[19:])
         from userbot.events import register
         for i in range(1, counter):
             await e.respond(spam_message)
-            time.sleep(0.5)
-            if emmioglu == "^.spamstop":
-                break
+            time.sleep(spamDelay)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
                 LOGGER_GROUP,
-                "#SlowSPAM \n\n"
-                "SlowSpam was executed successfully"
+                "#DelaySPAM \n\n"
+                "DelaySpam was executed successfully"
                 )
                                
 @register(outgoing=True, pattern="^.bigspam")
