@@ -10,7 +10,7 @@ from asyncio import wait
 
 from userbot import LOGGER_GROUP, LOGGER, HELPER
 from userbot.events import register
-
+pattern 
 @register(outgoing=True, pattern="^.tspam")
 async def tmeme(e):
     tspam = str(e.text[7:])
@@ -40,6 +40,7 @@ async def spammer(e):
         message = e.text
         counter = int(message[10:13])
         spam_message = str(e.text[13:])
+        from userbot.events import register
         for i in range(1, counter):
             await e.respond(spam_message)
             time.sleep(0.7)
