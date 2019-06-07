@@ -45,7 +45,7 @@ async def spammer(e):
         for i in range(1, counter):
             await e.respond(spam_message)
             time.sleep(0.5)
-            if emmioglu == "^.spamstop"
+            if emmioglu == "^.spamstop":
             break
         await e.delete()
         if LOGGER:
