@@ -4,8 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 
-import time
 import asyncio
+import time
 from asyncio import wait
 
 from userbot import LOGGER_GROUP, LOGGER, HELPER
@@ -33,15 +33,14 @@ async def spammer(e):
                 "#SPAM \n\n"
                 "Spam was executed successfully"
                 )
+
 @register(outgoing=True, pattern="^.slowspam")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
         counter = int(message[10:13])
         spam_message = str(e.text[13:])
-        for i in range(1, counter):
-            await e.respond(spam_message)
-	    time.sleep(1)
+        await asyncio.wait([e.respond(spam_message);asyncio.sleep(0.6) for i in range(counter)])
         await e.delete()
         if LOGGER:
             await e.client.send_message(
