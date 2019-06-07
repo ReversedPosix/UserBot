@@ -7,7 +7,7 @@
 import asyncio
 import time
 from asyncio import wait
-
+pattern = emmioglu
 from userbot import LOGGER_GROUP, LOGGER, HELPER
 from userbot.events import register
 pattern 
@@ -44,7 +44,7 @@ async def spammer(e):
         for i in range(1, counter):
             await e.respond(spam_message)
             time.sleep(0.7)
-            if pattern == "^.spamstop":
+            if emmioglu == "^.spamstop":
                 break
         await e.delete()
         if LOGGER:
